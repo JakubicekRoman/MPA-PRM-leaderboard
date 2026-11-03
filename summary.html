@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biosignals Results Summary</title>
+<style>
+  :root { --bg:#fff; --fg:#1b1f24; --muted:#5d6670; --line:#dde2e7; --card:#f6f7f9; --accent:#1f6fb2; --track:#d9dfe5; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16191d; --fg:#e7eaee; --muted:#a2abb5; --line:#343a42; --card:#1f2328; --accent:#6db3ec; --track:#39404a; } }
+  :root[data-theme="dark"] { --bg:#16191d; --fg:#e7eaee; --muted:#a2abb5; --line:#343a42; --card:#1f2328; --accent:#6db3ec; --track:#39404a; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 "Segoe UI",Arial,sans-serif; }
+  main { max-width:960px; margin:0 auto; padding:32px 16px 36px; }
+  h1 { font-size:28px; line-height:1.15; margin:0 0 4px; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 18px; }
+  .sub a { color:var(--accent); }
+  h2 { font-size:20px; margin:34px 0 12px; padding-top:14px; border-top:2px solid var(--accent); }
+  h3 { font-size:15px; font-weight:600; margin:0 0 10px; }
+  .card { background:var(--card); border-radius:8px; padding:14px 16px; }
+  .gap { margin-top:18px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; }
+  .mean { display:grid; grid-template-columns:minmax(120px,160px) 1fr 64px; gap:12px; align-items:center; min-height:30px; font-size:15px; }
+  .mean .t { height:12px; background:var(--track); border-radius:0 4px 4px 0; }
+  .mean .t b { display:block; height:100%; background:var(--accent); border-radius:0 4px 4px 0; }
+  .mean .v { text-align:right; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .mean .v small { font-size:13px; font-weight:400; color:var(--muted); }
+  .switch button:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
+  ul.list { list-style:none; margin:0; padding:0; }
+  ul.list li { display:grid; grid-template-columns:1fr 58px 120px; gap:2px 12px; align-items:center; padding:8px 0; border-top:1px solid var(--line); font-size:17px; line-height:1.3; }
+  ul.list li:first-child { border-top:0; padding-top:0; }
+  ul.list .n { font-weight:700; white-space:nowrap; text-align:right; font-variant-numeric:tabular-nums; }
+  ul.list .mb { height:10px; background:var(--track); border-radius:0 4px 4px 0; }
+  ul.list .mb b { display:block; height:100%; background:var(--accent); border-radius:0 4px 4px 0; }
+  ul.list .n small { font-size:13px; font-weight:400; color:var(--muted); }
+  ul.list p { grid-column:1 / -1; margin:0; font-size:14px; color:var(--muted); }
+  .bar { display:grid; grid-template-columns:minmax(120px,1.2fr) 1.6fr 36px; gap:10px; align-items:center; min-height:27px; font-size:14px; }
+  .bar .t { height:10px; background:var(--track); border-radius:0 4px 4px 0; }
+  .bar .t b { display:block; height:100%; background:var(--accent); border-radius:0 4px 4px 0; transition:width .25s; }
+  .bar .v { text-align:right; font-weight:600; font-variant-numeric:tabular-nums; }
+  .switch { display:flex; width:max-content; border:1px solid var(--line); border-radius:6px; overflow:hidden; margin:14px 0 10px; }
+  .switch button { font:inherit; font-size:13px; color:var(--muted); background:none; border:0; padding:4px 10px; cursor:pointer; }
+  .switch button[aria-pressed="true"] { background:var(--accent); color:var(--bg); }
+  .say { margin:10px 0 0; font-size:15px; }
+  @media (max-width:520px) { ul.list li { grid-template-columns:1fr 52px 60px; gap:2px 8px; font-size:16px; } }
+  @media print { .switch { display:none; } section { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Application project I: Biosignals, summary of results</h1>
+<p class="sub">13 teams · test result: <a href="https://jakubicekroman.github.io/MPA-PRM-leaderboard/">leaderboard</a></p>
+
+<div class="card"><h3>Mean points in each part</h3>
+  <div class="mean" title="Working solution: mean 1.92 of 2"><span>Working solution</span><span class="t"><b style="width:96%"></b></span><span class="v">1.92 <small>/ 2</small></span></div>
+  <div class="mean" title="Methodology: mean 2.65 of 3"><span>Methodology</span><span class="t"><b style="width:88%"></b></span><span class="v">2.65 <small>/ 3</small></span></div>
+  <div class="mean" title="Documentation: mean 1.62 of 2"><span>Documentation</span><span class="t"><b style="width:81%"></b></span><span class="v">1.62 <small>/ 2</small></span></div>
+</div>
+
+<section id="p-work">
+  <h2>Working solution</h2>
+  <ul class="list">
+      <li>Training code in the repository<span class="n">13 <small>/ 13</small></span><span class="mb"><b style="width:100%"></b></span><p>The code used to train the model or to choose its parameters.</p></li>
+      <li>Model or parameters in the repository<span class="n">13 <small>/ 13</small></span><span class="mb"><b style="width:100%"></b></span><p>The trained model or the fixed thresholds that predict.py uses.</p></li>
+      <li>predict.py ran as documented<span class="n">12 <small>/ 13</small></span><span class="mb"><b style="width:92%"></b></span><p>In one team, predict.py failed after the last merge.</p></li>
+      <li>Exact package versions<span class="n">9 <small>/ 13</small></span><span class="mb"><b style="width:69%"></b></span><p>Use the same package versions for training and prediction.</p></li>
+      <li>Unit tests (not required)<span class="n">5 <small>/ 13</small></span><span class="mb"><b style="width:38%"></b></span><p>Small automatic tests of parts of the code, for example on synthetic signals.</p></li>
+    </ul>
+</section>
+
+<section id="p-meth">
+  <h2>Methodology</h2>
+  <ul class="list">
+      <li>Data split by subject<span class="n">13 <small>/ 13</small></span><span class="mb"><b style="width:100%"></b></span><p>All records of one subject are in training or in validation, never in both.</p></li>
+      <li>Requests a new measurement<span class="n">13 <small>/ 13</small></span><span class="mb"><b style="width:100%"></b></span><p>The software returns an empty heart rate when the signal is not reliable.</p></li>
+      <li>Rejection tested on new subjects<span class="n">12 <small>/ 13</small></span><span class="mb"><b style="width:92%"></b></span><p>The rejection was evaluated on subjects that were not used to fit it.</p></li>
+      <li>Comparison with always answering or a constant value<span class="n">12 <small>/ 13</small></span><span class="mb"><b style="width:92%"></b></span><p>This shows how much the rejection adds to a solution without rejection.</p></li>
+      <li>Threshold derived from the scoring<span class="n">9 <small>/ 13</small></span><span class="mb"><b style="width:69%"></b></span><p>A wrong answer scores −2, so the expected score of an answer is positive only above p = 2/3.</p></li>
+      <li>Stated that spot and subject effects cannot be separated<span class="n">8 <small>/ 13</small></span><span class="mb"><b style="width:62%"></b></span><p>No subject was measured at both spots.</p></li>
+      <li>Comparison with a simple rule that can reject<span class="n">7 <small>/ 13</small></span><span class="mb"><b style="width:54%"></b></span><p>For example, an FFT peak with one threshold.</p></li>
+    </ul>
+  <div class="switch" role="group" aria-label="Value shown in the charts">
+    <button type="button" data-show="n" aria-pressed="true">Teams</button><button type="button" data-show="nb" aria-pressed="false">Mean test NB, %</button>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>Heart rate estimate</h3><div class="chart" data-rows="Signal processing|9|6.99;ML chooses among candidates|2|6.57;ML predicts the heart rate|2|0.95"></div></div>
+    <div class="card"><h3>Rejection</h3><div class="chart" data-rows="Logistic regression|3|9.09;Gradient boosting|4|6.85;Fixed rules, no ML|3|4.55;Random forest|2|3.79;Neural network (MLP)|1|2.02"></div></div>
+  </div>
+  <p class="say">The two teams with the highest net benefit used logistic regression on signal features. The groups are small, so this is not a statistical conclusion.</p>
+</section>
+
+<section id="p-doc">
+  <h2>Documentation</h2>
+  <ul class="list">
+      <li>Team, authors, intended purpose, risk section, net benefit estimate<span class="n">13 <small>/ 13</small></span><span class="mb"><b style="width:100%"></b></span><p>The basic parts of the report that the task requires.</p></li>
+      <li>Within 4 pages<span class="n">12 <small>/ 13</small></span><span class="mb"><b style="width:92%"></b></span><p>The limit for the printed report, including figures.</p></li>
+      <li>More than one commit<span class="n">12 <small>/ 13</small></span><span class="mb"><b style="width:92%"></b></span><p>The commit history is the development record.</p></li>
+      <li>Medical purpose<span class="n">11 <small>/ 13</small></span><span class="mb"><b style="width:85%"></b></span><p>What the device is for, for whom and in which setting.</p></li>
+      <li>Device class<span class="n">11 <small>/ 13</small></span><span class="mb"><b style="width:85%"></b></span><p>All these teams chose class IIa under Rule 11.</p></li>
+      <li>Risk table<span class="n">11 <small>/ 13</small></span><span class="mb"><b style="width:85%"></b></span><p>Hazards, their causes and the measures that control them.</p></li>
+      <li>Interval for the estimate<span class="n">11 <small>/ 13</small></span><span class="mb"><b style="width:85%"></b></span><p>The uncertainty of the net benefit estimate, for example a 95 % confidence interval.</p></li>
+      <li>Interval by subject bootstrap<span class="n">9 <small>/ 13</small></span><span class="mb"><b style="width:69%"></b></span><p>Resampling of whole subjects, because records of one subject are correlated.</p></li>
+      <li>Claims supported by code and data<span class="n">8 <small>/ 13</small></span><span class="mb"><b style="width:62%"></b></span><p>Risk controls must be implemented in the code, and the stated range must be covered by the data.</p></li>
+      <li>Harm to the patient stated in the risk table<span class="n">4 <small>/ 13</small></span><span class="mb"><b style="width:31%"></b></span><p>The effect of a wrong heart rate on the user.</p></li>
+    </ul>
+  <div class="grid gap">
+    <div class="card"><h3>Intended purpose</h3><div class="chart fixed" data-rows="Home and clinical use|6;Home spot check by lay users|5;No medical purpose|2"></div></div>
+    <div class="card"><h3>Device class under MDR, Rule 11</h3><div class="chart fixed" data-rows="Class IIa|11;Class I|0;Class IIb or III|0;Not stated|2"></div></div>
+    <div class="card"><h3>Software safety class, IEC 62304</h3><div class="chart fixed" data-rows="Class B|6;Class A or C|0;Not stated|7"></div></div>
+  </div>
+</section>
+</main>
+
+<script>
+  function teams(n) { return n + (n === 1 ? ' team' : ' teams'); }
+
+  // Bar charts; the charts with a mean NB switch between team counts and that mean.
+  var charts = [];
+  document.querySelectorAll('.chart').forEach(function (el) {
+    var rows = el.dataset.rows.split(';').map(function (s) { var p = s.split('|'); return { label: p[0], n: +p[1], nb: +p[2] }; });
+    el.innerHTML = rows.map(function (r) { return '<div class="bar"><span>' + r.label + '</span><span class="t"><b></b></span><span class="v"></span></div>'; }).join('');
+    charts.push({ el: el, rows: rows, fixed: el.classList.contains('fixed') });
+  });
+  function draw(key) {
+    charts.forEach(function (c) {
+      var k = c.fixed ? 'n' : key;
+      var top = Math.max.apply(null, c.rows.map(function (r) { return r[k]; }));
+      c.el.querySelectorAll('.bar').forEach(function (bar, i) {
+        var r = c.rows[i];
+        bar.querySelector('b').style.width = (100 * r[k] / top) + '%';
+        bar.querySelector('.v').textContent = k === 'n' ? r.n : r.nb.toFixed(1);
+        bar.title = r.label + ': ' + teams(r.n) + (c.fixed ? '' : ', mean test NB ' + r.nb.toFixed(2) + ' %');
+      });
+    });
+  }
+  document.querySelectorAll('.switch button').forEach(function (btn, _, all) {
+    btn.addEventListener('click', function () {
+      all.forEach(function (b) { b.setAttribute('aria-pressed', b === btn); });
+      draw(btn.dataset.show);
+    });
+  });
+  draw('n');
+
+</script>
+</body>
+</html>

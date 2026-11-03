@@ -32,12 +32,13 @@ dl { margin:0; font-size:15px; display:grid; grid-template-columns:max-content 1
 <div class="legend"><span><i style="background:var(--q1)"></i>Top quarter (4 of 13 teams)</span><span><i style="background:var(--half)"></i>Upper half (7 of 13 teams)</span></div>
 <dl>
 <dt>Net benefit</dt><dd>NB = TP/N − 2 · FP/N. TP = correct heart rates (within ±5 bpm of the ECG reference), FP = wrong heart rates, N = all records in the set. Higher is better.</dd>
-<dt>All records</dt><dd>The whole test set, N = 792. It gives the order.</dd>
-<dt>Internal</dt><dd>N = 744, new people, measured in a similar way as the training data.</dd>
-<dt>External</dt><dd>N = 48, other people, measured in a different setting.</dd>
+<dt>All records</dt><dd>The whole test set, N = 792. The ranking uses this value.</dd>
+<dt>Internal</dt><dd>N = 744, new subjects, measured in a similar way as the training data.</dd>
+<dt>External</dt><dd>N = 48, other subjects, measured in a different setting.</dd>
 <dt>Heart rate reported</dt><dd>Share of all records with a heart rate. The others have a request for a new measurement.</dd>
 <dt>Reported HR correct</dt><dd>Share of the reported heart rates within ±5 bpm of the ECG reference.</dd>
 <dt>Methods</dt><dd>Short summary of each team's report and code.</dd>
 </dl>
 <p class="abbr"><strong>Abbreviations:</strong> <b>ACF</b> autocorrelation function · <b>bpm</b> beats per minute · <b>FFT</b> fast Fourier transform (spectrum) · <b>FP</b> false positive · <b>GBM</b> gradient boosting machine · <b>HR</b> heart rate · <b>LR</b> logistic regression · <b>MLP</b> multilayer perceptron (small neural network) · <b>NB</b> net benefit · <b>RF</b> random forest · <b>SQI</b> signal quality index · <b>TP</b> true positive</p>
+<p class="abbr"><a href="summary.html">Summary of results</a></p>
 </main></body></html>
